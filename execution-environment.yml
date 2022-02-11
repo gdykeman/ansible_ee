@@ -1,0 +1,19 @@
+---
+version: 1
+dependencies:
+  galaxy: requirements.yml
+  python: requirements.txt
+  system: bindep.txt
+build_arg_defaults:
+  # EE_BASE_IMAGE: 'registry.redhat.io/ubi8/ubi:8.5-226'
+  EE_BASE_IMAGE: 'registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:latest'
+ansible_config: 'ansible.cfg'
+additional_build_steps:
+  prepend: |
+    RUN microdnf install dnf -y
+    RUN dnf install perl -y
+    RUN dnf install perl-DBI -y
+    RUN dnf install perl-DBD* -y
+
+  # append: |
+  #   RUN microdnf reinstall tzdata -y

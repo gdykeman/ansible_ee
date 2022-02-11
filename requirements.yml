@@ -1,0 +1,9 @@
+---
+collections:
+  - name: azure.azcollection
+  # - name: cisco.ios
+  # - name: junipernetworks.junos
+  # - name: arista.eos
+  # - name: amazon.aws
+  # - name: servicenow.itsm
+  # - name: infoblox.nios_modules
